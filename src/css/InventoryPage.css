@@ -1,0 +1,471 @@
+body {
+  user-select: none;
+}
+
+/* 전체 페이지 스타일 */
+.inventory-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+  background-color: #f5f5f5; /* 페이지 배경색 */
+}
+.productList,
+.stockList,
+.ioList {
+  padding: 20px;
+}
+/* 제목 스타일 */
+.inventory-page h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* 탭 버튼 스타일 */
+
+.tabs button {
+  margin-right: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #ccc;
+}
+.tabs button:hover {
+  background-color: #007bff;
+  color: white;
+}
+.tabs button.active {
+  background-color: #007bff;
+  color: white;
+}
+.tabs button.active:hover {
+  background-color: #0056b3;
+}
+
+/* 테이블 스타일 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 테이블 그림자 */
+}
+
+/* 테이블 헤더와 셀 스타일 */
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+table th {
+  background-color: #4a90e2;
+  color: white;
+  cursor: pointer;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+  background-color: #007bff;
+  color: white;
+}
+/* 기본적으로 GOODQUANTITY가 3 이하일 때 빨간색으로 표시 */
+.GQ.low-quantity {
+  color: red;
+}
+/* 검색 영역 스타일 */
+.search-bar {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-bar select {
+  padding: 5px;
+}
+/* .search-bar input {
+  width: 300px;
+  padding: 5px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+} */
+
+.search-bar button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.search-bar button:hover {
+  background-color: #0056b3; /* 버튼 hover 효과 */
+}
+
+/* 정렬 영역 스타일 */
+.sort-area {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.sort-area button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.sort-area button:hover {
+  background-color: #0056b3;
+}
+
+/* 페이징 블록 */
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #000;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination button.active {
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
+}
+
+/* 재고 추가 폼 */
+.addStockArea form,
+.editStockArea form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border: 2px solid #000;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 폼 그림자 */
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.addStockArea form label,
+.editStockArea form label {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  text-align: left;
+}
+
+.addStockArea form label span,
+.editStockArea form label span {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.addStockArea form input,
+.editStockArea form input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 97%;
+}
+
+.addStockArea form select {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.addStockArea form input[type="date"],
+.editStockArea form input[type="date"] {
+  padding: 8px;
+}
+
+.addStockArea button,
+.editStockArea button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.addStockArea button:hover,
+.editStockArea button:hover {
+  background-color: #0056b3;
+}
+
+/* 취소 버튼 스타일 */
+.addStockArea button[type="button"],
+.editStockArea button[type="button"] {
+  background-color: #dc3545;
+  margin-top: 10px;
+}
+
+.addStockArea button[type="button"]:hover,
+.editStockArea button[type="button"]:hover {
+  background-color: #c82333;
+}
+
+/* 추가폼 스타일 */
+.addStockArea form input[disabled] {
+  background-color: #e9ecef;
+}
+
+/* 수정폼 스타일 */
+.editStockArea form input[disabled] {
+  background-color: #e9ecef;
+}
+
+/* 재고 수정 폼 */
+.editStockArea form {
+  padding: 20px;
+  border: 2px solid #000;
+}
+
+.editStockArea form input {
+  justify-self: center;
+  width: calc(100% - 40px);
+}
+
+/* 목록으로 돌아가기 버튼 */
+button[type="button"].cancel-button {
+  background-color: #dc3545;
+  margin-left: 10px;
+}
+
+button[type="button"].cancel-button:hover {
+  background-color: #c82333;
+}
+
+/* 재고 추가 및 수정 버튼 */
+button[type="submit"] {
+  background-color: #28a745;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+/* 팝업 스타일 */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inventory-page .popup {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 400px;
+  text-align: left; /* 팝업 내 텍스트 왼쪽 정렬 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 팝업 그림자 */
+  z-index: 100; /* 기본 오버레이의 z-index 설정 */
+}
+
+.popup h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.popup div {
+  border-radius: 3%;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.popup-buttons {
+  margin-top: 20px;
+  text-align: center; /* 버튼은 여전히 중앙 정렬 */
+}
+
+.popup input {
+  width: calc(100% - 90%);
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.pay-sel {
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* 결제 및 취소 버튼 스타일 */
+.pay-button,
+.cancel-button {
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pay-button {
+  background-color: #28a745;
+}
+
+.pay-button:hover {
+  background-color: #218838; /* 결제 버튼 hover 효과 */
+}
+
+.cancel-button {
+  background-color: #dc3545;
+  margin-left: 10px;
+}
+
+.cancel-button:hover {
+  background-color: #c82333; /* 취소 버튼 hover 효과 */
+}
+
+/* 추가 및 수정 폼 전반적인 개선 사항 */
+.addStockArea form,
+.editStockArea form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border: 2px solid #ddd;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.addStockArea input,
+.editStockArea input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.addStockArea button,
+.editStockArea button {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.addStockArea button:hover,
+.editStockArea button:hover {
+  background-color: #0056b3;
+}
+.s_CheckBox {
+  transform: scale(1.5); /* 크기를 1.5배 키운다 */
+  width: calc(100% - 50%);
+}
+tr {
+  cursor: pointer;
+}
+.popup-buttons button:disabled {
+  flood-color: #ccc;
+  background-color: #c82333; /* 취소 버튼 hover 효과 */
+}
+.default-mode-button,
+.delete-mode-button {
+  position: absolute;
+  left: 20px;
+  top: 185px;
+  margin-left: 20px;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.default-mode-button {
+  background: linear-gradient(to bottom, #4a90e2, #357ab7);
+}
+.default-mode-button:hover {
+  background: #357ab7;
+}
+.delete-mode-button {
+  background-color: #c82333;
+}
+.delBtn {
+  font-size: 14px;
+  padding: 4px 10px;
+  background-color: #c82333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.inventory-page .add-button,
+.inventory-page .edit-button {
+  margin-bottom: 5px;
+  background: linear-gradient(to bottom, #4a90e2, #357ab7);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 3px;
+  margin-right: 10px;
+}
+.edit-button:disabled {
+  background-color: light-dark(rgba(239, 239, 239, 0.3), rgba(19, 1, 1, 0.3));
+  color: light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
+  border-color: light-dark(rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0));
+}
+.add-button:hover,
+.edit-button:not(:disabled):hover {
+  background: #357ab7;
+}
+/* 할인된 상품 진하게 표시 */
+.discounted-price {
+  font-weight: bold; /* 폰트를 진하게 */
+}

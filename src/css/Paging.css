@@ -1,0 +1,63 @@
+/* 페이지네이션 컨테이너 */
+.pagination-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Pagination 스타일 */
+.react-js-pagination {
+  display: inline-flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.react-js-pagination li {
+  margin: 0 8px;
+}
+
+.react-js-pagination li a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #007bff;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.react-js-pagination li a:hover {
+  background-color: #f1f1f1;
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.react-js-pagination .active a {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.react-js-pagination .disabled a {
+  color: #ccc;
+  pointer-events: none;
+  background-color: #f1f1f1;
+  border-color: #ddd;
+}
+
+/* 이전, 다음 페이지 스타일 */
+.react-js-pagination .prev a,
+.react-js-pagination .next a {
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* 요약 텍스트 */
+.summary {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}

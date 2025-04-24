@@ -1,0 +1,930 @@
+/* 전체 페이지 스타일 */
+.hr-page {
+  position: relative;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+  background-color: #f5f5f5; /* 페이지 배경색 */
+}
+.empList,
+.attList,
+.salList {
+  padding: 20px;
+}
+/* 제목 스타일 */
+.hr-page h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* 탭 버튼 스타일 */
+
+.tabs button {
+  margin-right: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  background-color: #ccc;
+}
+.tabs button:hover {
+  background-color: #007bff;
+  font-weight: bold;
+  color: white;
+}
+.tabs button.active {
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
+}
+.tabs button.active:hover {
+  background-color: #0056b3;
+}
+
+/* 테이블 스타일23 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 테이블 그림자 */
+}
+
+/* 테이블 헤더와 셀 스타일 */
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+table th {
+  background-color: #4a90e2;
+  color: white;
+  cursor: pointer;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+table tbody tr.selected {
+  background-color: #e0e0e0;
+}
+
+/* 검색 영역 스타일 */
+.search-bar {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-bar select {
+  padding: 5px;
+}
+.search-bar input {
+  width: 300px;
+  padding: 5px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.search-bar button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.search-bar button:hover {
+  background-color: #0056b3; /* 버튼 hover 효과 */
+}
+
+/* 정렬 영역 스타일 */
+.sort-area {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.sort-area button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.sort-area button:hover {
+  background-color: #0056b3;
+}
+
+/* 페이징 블록 */
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #000;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination button.active {
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
+}
+
+/* 결제 및 취소 버튼 스타일 */
+.pay-button,
+.hr-cancel-button {
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pay-button {
+  background-color: #28a745;
+}
+
+.pay-button:hover {
+  background-color: #218838; /* 결제 버튼 hover 효과 */
+}
+
+.cancel-button {
+  background-color: #dc3545;
+  margin-left: 10px;
+}
+
+.cancel-button:hover {
+  background-color: #c82333; /* 취소 버튼 hover 효과 */
+}
+
+/* 추가 버튼 스타일 */
+
+.add-emp-button,
+.add-att-button,
+.add-sal-button {
+  position: absolute;
+  right: 40px;
+  margin-bottom: 10px;
+  background: linear-gradient(to bottom, #4a90e2, #357ab7);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.add-emp-button {
+  top: 245px;
+}
+.add-att-button {
+  top: 135px;
+}
+.add-sal-button {
+  top: 185px;
+}
+/* 직급 체크박스 필터 스타일 */
+.position-filter {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.position-filter label.position-filter-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+  white-space: nowrap;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.position-filter input[type="checkbox"] {
+  cursor: pointer;
+}
+
+/* 재직 상태 체크박스 필터 스타일 */
+.employment-status-filter {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.employment-status-filter label.employment-status-filter-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+  white-space: nowrap;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.employment-status-filter label#text {
+  cursor: pointer;
+}
+
+/* 사원 정보 입력 폼 스타일 */
+.employee-form {
+  background-color: #f0e6ff;
+  border: 2px solid #6a0dad;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 400px;
+  transition: none; /* 애니메이션 비활성화 */
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-row label {
+  width: 100px;
+  font-weight: bold;
+}
+
+.form-row input,
+.form-row select {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.form-row input[readonly] {
+  background-color: #e9ecef;
+}
+
+.form-row .required {
+  color: red;
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 10px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.form-buttons button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.add-id-btn {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+.form-buttons .add-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.form-buttons .cancel-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background: #6c757d;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.form-buttons .add-btn:hover {
+  background: #0056b3;
+}
+.form-buttons .cancel-btn:hover {
+  background: #5a6268;
+}
+
+.Attendance-popup-overlay,
+.Salary-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Modal Overlay */
+.Salary-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.Salary-popup {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+/* Modal Title */
+.Salary-popup h2 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Styles */
+.Salary-popup form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Input Group */
+.Salary-popup .salary-modal-input-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Label */
+.Salary-popup label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+
+.Salary-popup label span {
+  font-weight: bold;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Input Row for Employee ID with Lookup Button */
+.Salary-popup .salary-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Input with Button Wrapper */
+.Salary-popup .salary-input-with-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+}
+
+/* Input Fields */
+.Salary-popup input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.Salary-popup input[disabled] {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+/* Lookup Button */
+.Salary-popup .salary-chk-btn {
+  padding: 7px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 25px;
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.Salary-popup .salary-chk-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Error Message */
+.Salary-popup .salary-error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Modal Buttons */
+.salary-popup .salary-modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Add/Edit Button */
+.salary-popup .salary-add-btn {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.salary-popup .salary-add-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Cancel Button */
+.salary-popup .salary-cancel-btn {
+  padding: 8px 16px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.salary-popup .salary-cancel-btn:hover {
+  background-color: #5a6268;
+}
+
+.Attendance-popup,
+.Salary-popup {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 400px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+}
+
+.modal-input-group {
+  margin-bottom: 15px;
+}
+
+.modal-input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.modal-input-group input,
+.modal-input-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.radio-group {
+  display: flex; /* 가로 배치 */
+  gap: 15px; /* 라디오 버튼 간 간격 */
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.note-textarea {
+  width: 100%;
+  height: 150px; /* 비고란 크기 키움 */
+  resize: vertical; /* 세로 크기 조절만 허용 */
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.add-btn,
+.cancel-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-btn {
+  background: #007bff;
+  color: white;
+}
+
+.cancel-btn {
+  background: #6c757d;
+  color: white;
+}
+
+/* 모달 오버레이 */
+.attendance-modal-overlay,
+.salary-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* 모달 컨텐츠 */
+.attendance-modal-content,
+.salary-modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 모달 제목 */
+.attendance-modal-title,
+.salary-modal-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* 입력 그룹 */
+.attendance-modal-input-group,
+.salary-modal-input-group {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start; /* 라벨과 입력창을 위쪽 정렬 */
+  gap: 10px;
+}
+
+/* 라벨 */
+.attendance-modal-label,
+.salary-modal-label {
+  width: 80px;
+  font-weight: bold;
+  color: #555;
+  flex-shrink: 0;
+  padding-top: 8px; /* 입력창과 수직 정렬을 맞추기 위해 */
+}
+
+/* 입력창 래퍼 (입력창, 접미사, 에러 메시지를 감싸는 컨테이너) */
+.attendance-input-wrapper,
+.salary-input-wrapper {
+  display: flex;
+  flex-direction: column; /* 입력창과 에러 메시지를 세로로 배치 */
+  gap: 5px;
+  flex: 1;
+}
+
+/* 텍스트 래퍼 (텍스트와 에러 메시지를 감싸는 컨테이너) */
+.attendance-textarea-wrapper,
+.salary-textarea-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+
+/* 입력창과 버튼을 감싸는 컨테이너 */
+.salary-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+/* 입력창과 버튼을 감싸는 컨테이너 */
+.salary-input-with-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+}
+
+/* 입력창 */
+.attendance-modal-input,
+.salary-modal-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+/* 사번 조회 버튼 */
+.salary-lookup-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.salary-lookup-btn:hover {
+  background: #0056b3;
+}
+
+/* 접미사 텍스트 (입력창 옆 텍스트) */
+.attendance-input-suffix,
+.salary-input-suffix {
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+}
+
+/* 접미사 구분선 (시와 분 사이의 구분선) */
+.attendance-input-suffix-divider,
+.salary-input-suffix-divider {
+  display: inline-block;
+  width: 5px;
+}
+
+/* 텍스트에리어 */
+.attendance-modal-textarea,
+.salary-modal-textarea {
+  width: 100%;
+  height: 100px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  font-size: 14px;
+}
+
+/* 라디오 버튼 그룹 */
+.attendance-radio-group,
+.salary-radio-group {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  flex: 1;
+}
+
+/* 라디오 버튼 라벨 */
+.attendance-radio-label,
+.salary-radio-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: #555;
+  writing-mode: horizontal-tb;
+  white-space: nowrap;
+}
+
+/* 에러 메시지 */
+.attendance-error-message,
+.salary-error-message {
+  color: red;
+  font-size: 12px;
+  margin: 0; /* 불필요한 여백 제거 */
+}
+
+/* 일반 에러 메시지 (validationErrors.general) */
+.attendance-error-message-general,
+.salary-error-message-general {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* 버튼 그룹 */
+.attendance-modal-buttons,
+.salary-modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* 등록 버튼 */
+.attendance-add-btn,
+.salary-add-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.attendance-add-btn:hover,
+.salary-add-btn:hover {
+  background: #0056b3;
+}
+
+/* 취소 버튼 */
+.attendance-cancel-btn,
+.salary-cancel-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background: #6c757d;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.attendance-cancel-btn:hover,
+.salary-cancel-btn:hover {
+  background: #5a6268;
+}
+
+.attendance-modal-input[readonly],
+.Salary-modal-input[readonly] {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+/* 검색창 스타일 */
+.search-container {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.search-field,
+.search-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.search-field {
+  width: 150px;
+}
+
+.search-input {
+  width: 200px;
+}
+
+.search-button,
+.reset-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.search-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.reset-button {
+  background-color: #6c757d;
+  color: white;
+}
+
+.reset-button:hover {
+  background-color: #5a6268;
+}
+
+.add-emp-button:hover,
+.add-att-button:hover,
+.add-sal-button:hover {
+  background: #357ab7;
+}
