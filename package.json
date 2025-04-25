@@ -1,7 +1,7 @@
 {
-  "homepage": "https://wldnjs0140.github.io/gone_erp",
-  "name": "erp_project",
+  "name": "erp_project_test",
   "version": "0.1.0",
+  "homepage": "https://wldnjs0140.github.io/gone_erp",
   "private": true,
   "dependencies": {
     "bootstrap": "^5.3.3",
