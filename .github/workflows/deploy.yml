@@ -21,3 +21,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
+          publish_branch: gh-pages # 명시적으로 지정
+          force_orphan: true # 기존 기록 삭제 후 새로 생성
