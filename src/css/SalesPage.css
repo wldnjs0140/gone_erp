@@ -15,12 +15,12 @@ table tbody tr:hover {
 
 table tbody tr:hover .profit,
 table tbody tr:hover .loss {
-  color: white; /* profit과 loss 클래스의 텍스트 색상을 흰색으로 변경 */
+  color: white;
 }
 
 /* ==========================================================================
-     SalesPage 관련 스타일 (Sales Screen)
-     ========================================================================== */
+       SalesPage 관련 스타일 (Sales Screen)
+       ========================================================================== */
 .sales-screen {
   padding: 20px;
   text-align: center;
@@ -78,7 +78,7 @@ table tbody tr:hover .loss {
 .filters {
   display: flex;
   align-items: center;
-  gap: 15px; /* 요소 간격 */
+  gap: 15px;
 }
 
 .filters label {
@@ -91,18 +91,18 @@ table tbody tr:hover .loss {
 .filters input[type="checkbox"] {
   width: 20px;
   height: 20px;
-  border-radius: 50%; /* 원형 모양 */
-  appearance: none; /* 기본 체크박스 스타일을 제거 */
-  border: 1px solid #ccc; /* 테두리 색상 */
+  border-radius: 50%;
+  appearance: none;
+  border: 1px solid #ccc;
   cursor: pointer;
-  background-color: white; /* 체크박스 배경색 */
+  background-color: white;
   display: inline-block;
   position: relative;
 }
 
 .filters input[type="checkbox"]:checked {
-  background-color: #4a90e2; /* 체크된 상태의 배경색 */
-  border-color: #357ab7; /* 체크된 상태의 테두리 색상 */
+  background-color: #4a90e2;
+  border-color: #357ab7;
 }
 
 .filters input[type="checkbox"]:checked::before {
@@ -112,7 +112,7 @@ table tbody tr:hover .loss {
   left: 4px;
   width: 10px;
   height: 10px;
-  background-color: white; /* 체크된 상태에서의 표시 색상 */
+  background-color: white;
   border-radius: 50%;
 }
 
@@ -132,8 +132,8 @@ table tbody tr:hover .loss {
 }
 
 /* ==========================================================================
-     PaymentList 관련 스타일 (Payment Screen)
-     ========================================================================== */
+       PaymentList 관련 스타일 (Payment Screen)
+       ========================================================================== */
 .payment-screen {
   background-color: #f5f5f5;
 }
@@ -218,8 +218,8 @@ th.sortable-header:hover {
 }
 
 /* ==========================================================================
-     AddPaymentModal 관련 스타일 (Modal)
-     ========================================================================== */
+       AddPaymentModal 관련 스타일 (Modal)
+       ========================================================================== */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -364,24 +364,70 @@ th.sortable-header:hover {
 }
 
 /* ==========================================================================
-     팝업 관련 스타일 (Popup for SalesList)
-     /* ========================================================================== */
+       SalesList 모달 관련 스타일 (Sales Modal)
+       ========================================================================== */
+.sales-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100; /* 다른 요소 위에 표시되도록 z-index 높게 설정 */
+}
 
-.close-btn {
-  background: red;
+.sales-modal-content {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  width: 600px;
+  max-width: 90%;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: center;
+}
+
+.sales-modal-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 10px;
+}
+
+.sales-modal-chart {
+  margin: 20px 0;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.sales-modal-close {
+  background: #e74c3c;
   color: white;
   border: none;
-  padding: 5px 10px;
+  padding: 8px 12px;
   font-size: 16px;
   cursor: pointer;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 15px;
+  right: 15px;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.sales-modal-close:hover {
+  background: #c0392b;
 }
 
 /* ==========================================================================
-     페이지네이션 스타일 (Pagination)
-     ========================================================================== */
+       페이지네이션 스타일 (Pagination)
+       ========================================================================== */
 .pagination {
   margin-top: 20px;
   display: flex;

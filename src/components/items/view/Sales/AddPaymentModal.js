@@ -145,14 +145,8 @@ const AddPaymentModal = ({ onAddPayment, onClose }) => {
     }
   };
 
-  const handleOverlayClick = (e) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
-
   return (
-    <div className="modal-overlay" onClick={handleOverlayClick}>
+    <div className="modal-overlay">
       <div className="modal-content">
         <h2>결제 내역 추가</h2>
         <div className="modal-input-group">

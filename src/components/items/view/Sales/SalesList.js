@@ -10,14 +10,14 @@ const SalesList = ({ salesList, setSalesList }) => {
   const [filterType, setFilterType] = useState("all");
   const [showPopup, setShowPopup] = useState(false);
   const [monthlySales, setMonthlySales] = useState([]);
-  const [error, setError] = useState(null); // 에러 상태 추가
+  const [error, setError] = useState(null);
 
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
-      setShowPopup(false); // 모달 바깥 클릭 시 닫기
+      setShowPopup(false);
     }
   };
-  // salesList 또는 currentPage, filterType 변경 시 displayedSales 동기화
+
   useEffect(() => {
     let filteredSales;
 
@@ -35,7 +35,6 @@ const SalesList = ({ salesList, setSalesList }) => {
     setTotalPages(Math.ceil(filteredSales.length / 15));
   }, [salesList, currentPage, filterType]);
 
-  // 손익 계산
   const calculateProfit = (record) => {
     if (record.PAYMENTTYPE === "환불") {
       return -record.COST;
@@ -46,7 +45,6 @@ const SalesList = ({ salesList, setSalesList }) => {
     }
   };
 
-  // 총 손익 계산
   const calculateTotalProfit = () => {
     return salesList.reduce(
       (total, record) => total + calculateProfit(record),
@@ -54,7 +52,6 @@ const SalesList = ({ salesList, setSalesList }) => {
     );
   };
 
-  // 정렬 기능
   const handleSort = (key) => {
     let direction = "asc";
     if (sortConfig.key === key && sortConfig.direction === "asc") {
@@ -90,12 +87,10 @@ const SalesList = ({ salesList, setSalesList }) => {
     setSortConfig({ key, direction });
   };
 
-  // 페이지 변경
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
 
-  // 페이지네이션 범위 계산
   const pageNumbers = () => {
     const range = [];
     const maxPage = Math.min(5, totalPages);
@@ -130,28 +125,25 @@ const SalesList = ({ salesList, setSalesList }) => {
         throw new Error("월별 매출 데이터를 가져오는 데 실패했습니다.");
       const data = await response.json();
 
-      // 데이터가 배열인지 확인
       if (!Array.isArray(data)) {
         throw new Error("월별 매출 데이터가 배열 형식이 아닙니다.");
       }
 
-      // 필수 필드(SALE_MONTH, TOTAL_SALES)가 있는지 확인
       const validatedData = data.map((item) => ({
         SALE_MONTH: item.SALE_MONTH || "Unknown",
-        TOTAL_SALES: item.TOTAL_SALES || 0, // 서버에서 TOTAL_SALES로 반환된다고 가정
+        TOTAL_SALES: item.TOTAL_SALES || 0,
       }));
 
       setMonthlySales(validatedData);
       setShowPopup(true);
-      setError(null); // 성공 시 에러 초기화
+      setError(null);
     } catch (error) {
       setError(error.message);
       console.error("월별 매출 데이터 가져오기 오류:", error);
-      setShowPopup(false); // 에러 발생 시 팝업 닫기
+      setShowPopup(false);
     }
   };
 
-  // 차트 데이터 설정
   const chartData = {
     labels: monthlySales.map((item) => `${item.SALE_MONTH}월`),
     datasets: [
@@ -165,7 +157,6 @@ const SalesList = ({ salesList, setSalesList }) => {
     ],
   };
 
-  // 차트 옵션 (선택적)
   const chartOptions = {
     scales: {
       y: {
@@ -206,18 +197,21 @@ const SalesList = ({ salesList, setSalesList }) => {
         <button onClick={fetchMonthlySales}>월별 매출 내역</button>
       </div>
 
-      {/* 에러 메시지 표시 */}
       {error && <div className="error-message">오류: {error}</div>}
 
-      {/* 팝업 창 */}
       {showPopup && monthlySales.length > 0 && (
-        <div className="popup" onClick={handleOverlayClick}>
-          <div className="popup-content">
-            <button className="close-btn" onClick={() => setShowPopup(false)}>
+        <div className="sales-modal-overlay" onClick={handleOverlayClick}>
+          <div className="sales-modal-content">
+            <button
+              className="sales-modal-close"
+              onClick={() => setShowPopup(false)}
+            >
               X
             </button>
-            <h2>월별 매출 그래프</h2>
-            <Bar data={chartData} options={chartOptions} />
+            <h2 className="sales-modal-title">월별 매출 그래프</h2>
+            <div className="sales-modal-chart">
+              <Bar data={chartData} options={chartOptions} />
+            </div>
           </div>
         </div>
       )}
@@ -282,7 +276,6 @@ const SalesList = ({ salesList, setSalesList }) => {
         </span>
       </div>
 
-      {/* 페이지네이션 */}
       <div className="pagination">
         {currentPage > 1 && (
           <button
