@@ -19,6 +19,10 @@ function App() {
         <Route path="/Inventory" element={<InventoryPage />} />
         <Route path="/SalesPage" element={<SalesPage />} />
         <Route path="/hr" element={<HRPage />} />
+        <Route
+          path="*"
+          element={<MainPage setLoginModalOpen={setLoginModalOpen} />}
+        />
       </Routes>
 
       {isLoginModalOpen && (
