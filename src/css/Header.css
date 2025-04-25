@@ -68,7 +68,7 @@
   color: white;
   padding: 5px 10px;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 13px;
   white-space: nowrap;
   z-index: 10;
   transition: opacity 0.2s ease, visibility 0.2s ease;
