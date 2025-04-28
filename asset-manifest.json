@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/gone_erp/static/css/main.28bb5937.css",
+    "main.js": "/gone_erp/static/js/main.24bcc049.js",
+    "static/js/488.9a57e8cb.chunk.js": "/gone_erp/static/js/488.9a57e8cb.chunk.js",
+    "index.html": "/gone_erp/index.html",
+    "main.28bb5937.css.map": "/gone_erp/static/css/main.28bb5937.css.map",
+    "main.24bcc049.js.map": "/gone_erp/static/js/main.24bcc049.js.map",
+    "488.9a57e8cb.chunk.js.map": "/gone_erp/static/js/488.9a57e8cb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.28bb5937.css",
+    "static/js/main.24bcc049.js"
+  ]
+}
